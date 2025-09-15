@@ -1,0 +1,46 @@
+{
+  "features": [
+    "NH4NO3_mg_L",
+    "KNO3_mg_L",
+    "CaCl2_2H2O_mg_L",
+    "MgSO4_7H2O_mg_L",
+    "KH2PO4_mg_L",
+    "luminosity_umol_m2_s",
+    "temp_C",
+    "humidity_%"
+  ],
+  "target": "protein",
+  "models": {
+    "ElasticNet": {
+      "path": "models/elasticnet.pkl",
+      "hyperparams": {
+        "alpha": 0.1,
+        "l1_ratio": 0.5,
+        "random_state": 42
+      }
+    },
+    "Poly2": {
+      "path": "models/poly2.pkl",
+      "hyperparams": {
+        "degree": 2
+      }
+    },
+    "RandomForest": {
+      "path": "models/random_forest.pkl",
+      "hyperparams": {
+        "n_estimators": 300,
+        "max_depth": null,
+        "random_state": 42
+      }
+    },
+    "GradientBoosting": {
+      "path": "models/gradient_boosting.pkl",
+      "hyperparams": {
+        "n_estimators": 300,
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "random_state": 42
+      }
+    }
+  }
+}
