@@ -83,11 +83,11 @@ def train_models(dataframe: pd.DataFrame):
                                ("lin", LinearRegression())]).fit(X_train, y_train)
         models["Poly2"] = {"model": poly_model, "params": {"degree": 2}}
         # Random Forest
-        rf = RandomForestRegressor(n_estimators=300, max_depth=None, random_state=42).fit(X_train, y_train)
-        models["RandomForest"] = {"model": rf, "params": {"n_estimators": 300, "max_depth": None, "random_state": 42}}
+        rf = RandomForestRegressor(n_estimators=100, max_depth=None, random_state=42).fit(X_train, y_train)
+        models["RandomForest"] = {"model": rf, "params": {"n_estimators": 100, "max_depth": None, "random_state": 42}}
         # Gradient Boosting
-        gb = GradientBoostingRegressor(n_estimators=300, learning_rate=0.05, max_depth=3, random_state=42).fit(X_train, y_train)
-        models["GradientBoosting"] = {"model": gb, "params": {"n_estimators": 300, "learning_rate": 0.05, "max_depth": 3, "random_state": 42}}
+        gb = GradientBoostingRegressor(n_estimators=100, learning_rate=0.05, max_depth=3, random_state=42).fit(X_train, y_train)
+        models["GradientBoosting"] = {"model": gb, "params": {"n_estimators": 100, "learning_rate": 0.05, "max_depth": 3, "random_state": 42}}
 
     # Metrics
     metrics = {}
